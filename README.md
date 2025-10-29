@@ -1,36 +1,159 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 AI-Powered Web Performance Optimizer
 
-## Getting Started
+A comprehensive web performance analysis tool that provides detailed insights and AI-powered recommendations to optimize your website's performance, built with Next.js 16 and powered by Google's Gemini AI.
 
-First, run the development server:
+## ✨ Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **🔍 Comprehensive Analysis**: Complete Lighthouse audit with Core Web Vitals
+- **📊 Resource Analysis**: Detailed breakdown of file sizes and optimization opportunities
+- **🤖 AI Recommendations**: Human-friendly suggestions powered by Google's Gemini AI
+- **📱 Responsive Design**: Beautiful, mobile-friendly interface
+- **⚡ Real-time Analysis**: Fast performance testing with live results
+- **🎯 Actionable Insights**: Prioritized recommendations with expected improvement percentages
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Framework**: Next.js 16 with App Router
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Performance Testing**: Lighthouse, Puppeteer
+- **AI Integration**: Google Generative AI (Gemini)
+- **Package Manager**: Bun
+- **UI Components**: Custom components with Tailwind
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🏁 Quick Start
 
-## Learn More
+### Prerequisites
 
-To learn more about Next.js, take a look at the following resources:
+- Node.js 18+ or Bun
+- Google Gemini API key
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Installation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd wep-performance-optimizer
+   ```
 
-## Deploy on Vercel
+2. **Install dependencies**
+   ```bash
+   bun install
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. **Set up environment variables**
+   Create a `.env.local` file in the root directory:
+   ```env
+   GEMINI_API_KEY=your_gemini_api_key_here
+   NEXT_PUBLIC_APP_URL=http://localhost:3000
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4. **Get your Gemini API key**
+   - Go to [Google AI Studio](https://makersuite.google.com/app/apikey)
+   - Create a new API key
+   - Copy and paste it into your `.env.local` file
+
+5. **Run the development server**
+   ```bash
+   bun dev
+   ```
+
+6. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000)
+
+## 🎯 How to Use
+
+1. **Enter a URL**: Input any website URL you want to analyze
+2. **Start Analysis**: Click "Analyze" to begin the comprehensive performance test
+3. **View Results**: Get detailed insights including:
+   - Core Web Vitals scores
+   - Performance, Accessibility, Best Practices, and SEO scores
+   - Resource breakdown and optimization opportunities
+   - AI-powered recommendations with expected improvements
+4. **Implement Suggestions**: Follow the prioritized recommendations to optimize your website
+
+## 📊 What Gets Analyzed
+
+### Core Web Vitals
+- **FCP (First Contentful Paint)**: Time until first content appears
+- **LCP (Largest Contentful Paint)**: Time until main content loads
+- **FID (First Input Delay)**: Time until page becomes interactive
+- **CLS (Cumulative Layout Shift)**: Visual stability score
+- **TTFB (Time to First Byte)**: Server response time
+
+### Performance Metrics
+- Overall performance score (0-100)
+- Accessibility compliance
+- Best practices adherence
+- SEO optimization level
+
+### Resource Analysis
+- Total page size and HTTP requests
+- JavaScript, CSS, HTML, and image sizes
+- Compression ratios
+- Unused code detection
+
+### AI Recommendations
+- Critical issues identification
+- Optimization opportunities with difficulty levels
+- Expected performance improvements
+- Priority action items
+
+## 🔧 Configuration
+
+### Environment Variables
+
+| Variable | Description | Required |
+|----------|-------------|----------|
+| `GEMINI_API_KEY` | Google Gemini AI API key | Yes |
+| `NEXT_PUBLIC_APP_URL` | Application URL for development | No |
+
+### Customization
+
+The application can be customized by modifying:
+- **Thresholds**: Update performance thresholds in `src/components/WebVitalsCard.tsx`
+- **AI Prompts**: Modify AI prompts in `src/lib/ai-service.ts`
+- **Styling**: Customize the UI in component files and `src/app/globals.css`
+
+## 🚀 Deployment
+
+### Vercel (Recommended)
+1. Push your code to GitHub
+2. Connect your repository to Vercel
+3. Add your environment variables in Vercel dashboard
+4. Deploy automatically
+
+### Other Platforms
+1. Build the application: `bun run build`
+2. Start the production server: `bun start`
+3. Ensure environment variables are set
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/amazing-feature`
+3. Commit your changes: `git commit -m 'Add amazing feature'`
+4. Push to the branch: `git push origin feature/amazing-feature`
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- [Lighthouse](https://developers.google.com/web/tools/lighthouse) for performance auditing
+- [Google Gemini AI](https://ai.google.dev/) for intelligent recommendations
+- [Next.js](https://nextjs.org/) for the amazing framework
+- [Tailwind CSS](https://tailwindcss.com/) for styling
+
+## 📞 Support
+
+If you encounter any issues or have questions:
+1. Check the [Issues](../../issues) page
+2. Create a new issue with detailed information
+3. Contact the maintainers
+
+---
+
+Made with ❤️ for better web performance
