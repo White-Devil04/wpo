@@ -1,6 +1,7 @@
 'use client';
 
 import { Card, CardContent } from '@/components/ui/card';
+import { motion, useReducedMotion } from 'framer-motion';
 
 export function LoadingAnalysis() {
   const steps = [
@@ -11,18 +12,18 @@ export function LoadingAnalysis() {
     'Processing AI recommendations...',
     'Finalizing results...',
   ];
+  const prefersReducedMotion = useReducedMotion();
 
   return (
     <Card className="w-full max-w-2xl mx-auto">
       <CardContent className="p-8">
         <div className="text-center space-y-6">
-          <div className="relative">
-            {/* Animated spinner */}
+          <motion.div className="relative" initial={prefersReducedMotion ? false : { opacity: 0, scale: 0.96 }} animate={prefersReducedMotion ? undefined : { opacity: 1, scale: 1 }} transition={{ duration: 0.35 }}>
             <div className="w-16 h-16 mx-auto">
               <div className="absolute top-0 left-0 w-full h-full border-4 border-blue-200 rounded-full"></div>
               <div className="absolute top-0 left-0 w-full h-full border-4 border-blue-600 rounded-full border-t-transparent animate-spin"></div>
             </div>
-          </div>
+          </motion.div>
 
           <div>
             <h3 className="text-xl font-semibold text-gray-800 mb-2">
@@ -36,12 +37,12 @@ export function LoadingAnalysis() {
           {/* Progress steps */}
           <div className="space-y-3 text-left max-w-md mx-auto">
             {steps.map((step, index) => (
-              <div key={index} className="flex items-center gap-3">
+              <motion.div key={index} className="flex items-center gap-3" initial={prefersReducedMotion ? false : { opacity: 0, x: -6 }} animate={prefersReducedMotion ? undefined : { opacity: 1, x: 0 }} transition={{ duration: 0.25, delay: index * 0.05 }}>
                 <div className="flex-shrink-0">
                   <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
                 </div>
                 <span className="text-sm text-gray-600">{step}</span>
-              </div>
+              </motion.div>
             ))}
           </div>
 
