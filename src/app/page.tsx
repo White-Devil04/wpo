@@ -9,7 +9,6 @@ import { WebVitalsCard } from '@/components/WebVitalsCard';
 import { PerformanceScores } from '@/components/PerformanceScores';
 import { ResourceAnalysisCard } from '@/components/ResourceAnalysisCard';
 import { AIRecommendations } from '@/components/AIRecommendations';
-import { LoadingAnalysis } from '@/components/LoadingAnalysis';
 import { StatusBanner } from '@/components/StatusBanner';
 import { validateUrl, normalizeUrl } from '@/lib/utils';
 import { motion, useReducedMotion } from 'framer-motion';
@@ -177,8 +176,7 @@ export default function Home() {
 
       {/* URL Input moved into hero */}
 
-      {/* Loading State */}
-      {loading && <LoadingAnalysis />}
+      {/* Loading State removed as requested */}
 
       {/* Results */}
       {results && !loading && (
